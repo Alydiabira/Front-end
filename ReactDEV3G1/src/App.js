@@ -1,6 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import  React, { useReducer } from 'react';
+import $ from "jquery";
+import "turn.js";
 import Home from './components/Home/Home';
 import Services from './components/Services/Services';
 import Profile from './components/Profile/Profile';
@@ -22,6 +24,11 @@ import FilesUploadForm from './components/FilesUploadForm/FilesUploadForm';
 import MyBlog from './components/MyBlog/MyBlog';
 import BlogIndex from './components/BlogIndex/BlogIndex';
 import ChatApp from './components/ChatApp/ChatApp';
+import IndexComponent from './components/IndexComponent';
+
+
+
+
 
 // import styles from './app.module.css'
 
@@ -50,7 +57,37 @@ import ChatApp from './components/ChatApp/ChatApp';
 // export const CountContext =React.createContext();
 // import Welcome from './components/Welcome';
 
-function App() {
+
+   
+const options = {
+  width: 800,
+  height: 600,
+  autoCenter: true,
+  display: "double",
+  acceleration: true,
+  elevation: 50,
+  gradients: !$.isTouch,
+  when: {
+    turned: function (e, page) {
+      console.log(page);
+      console.log("Current view: ", $(this).turn("view"));
+    }
+  }
+};
+
+const pages = [
+  "https://raw.github.com/blasten/turn.js/master/demos/magazine/pages/01.jpg",
+  "https://raw.github.com/blasten/turn.js/master/demos/magazine/pages/02.jpg",
+  "https://raw.github.com/blasten/turn.js/master/demos/magazine/pages/03.jpg",
+  "https://raw.github.com/blasten/turn.js/master/demos/magazine/pages/04.jpg",
+  "https://raw.github.com/blasten/turn.js/master/demos/magazine/pages/05.jpg",
+  "https://raw.github.com/blasten/turn.js/master/demos/magazine/pages/06.jpg"
+];
+
+
+const App = () => {
+  
+  
   // const initialState = 0;
   // const reducer = (state, action) => {
   //   switch(action){
@@ -120,42 +157,15 @@ function App() {
       {/* <DataFetchTodos /> */}
       {/* <DataFetchReducer /> */}
       {/* <DataFetchProducts /> */}
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        {/* <Route path='/services/' element={<Services />} /> */}
+
+      <IndexComponent options={options} className="magazine">
+      {pages.map((page, index) => (
         
-        <Route path='/services/' element={<Services />}>
-          <Route path='/services/developpement' element={<Developpement />} />
-          <Route path='/services/marketing' element={<Marketing />} />
-        </Route>
-        
-        <Route path='/profile/:id' element={<Profile />} />
-
-        <Route path='/admin/' element={<Admin />} >
-          <Route path='/admin/dashboard' element={<Dashboard />} />
-          <Route path='/admin/gestionpost' element={<GestionPost />} />
-        </Route>
-
-        <Route path='/onefilm' element={<FetchOneFilm />} />
-        <Route path='/allfilm' element={<FetchAllFilm />} />
-        <Route path='/newfilm' element={<NewFilm />} />
-        <Route path='/updatefilm/:id' element={<UpdateFilm />} />
-
-        <Route path='/login' element={<Login />} />
-        <Route path='/inscription' element={<Inscription />} />
-        
-        <Route path='/uploadimage' element={<ImageUpload />} />
-        <Route path='/uploadimages' element={<FilesUploadForm />} />
-        
-        <Route path='/myblog' element={<MyBlog />} />
-        <Route path='/blog' element={<BlogIndex />} />
-
-        <Route path='/chat' element={<ChatApp />} />
-
-
-        <Route path='/*' element={<NotFound />} />
-      </Routes>
+        <div key={index} className="page">
+          <img src={page} alt="" />
+        </div>
+      ))}
+    </IndexComponent>
 
     </div>
   );
