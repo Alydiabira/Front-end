@@ -27,7 +27,7 @@ function BlogIndex() {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     useEffect(() =>{
-        axios.get('http://localhost:5000/myblog')
+        axios.get('http://localhost:5001/myblog')
         .then(response =>{
             dispatch({type: 'FETCH_SUCCESS', payload: response.data})
         })
@@ -43,7 +43,7 @@ function BlogIndex() {
                     <h1>{blog.titre}</h1>
                     <h2>{blog.username}</h2>
                     <h2>{blog.imagename}</h2>
-                    <img src={`http://localhost:5000/${blog.imagename}`} />
+                    <img src={`http://localhost:5001/${blog.imagename}`} />
                 </React.Fragment>
             )
         })}
