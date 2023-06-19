@@ -8,7 +8,7 @@ function FetchOneFilm() {
     const [film, setFilm] = useState({})
 
     useEffect(() =>{
-        axios.get('http://localhost:5000/film/64803932052fd9a0dac0f4fe')
+        axios.get('http://localhost:5001/film/64803932052fd9a0dac0f4fe')
         .then((response) =>{
             setLoading(false)
             setError('')
