@@ -2,7 +2,7 @@ import React from 'react'
 
 function Inscription() {
   return (
-    <form action="http://localhost:5000/api/signup" method="post">
+    <form action="http://localhost:5001/api/signup" method="post">
 
         <label for="">Username</label>
         <input type="text" name="username"/>
