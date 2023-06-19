@@ -14,7 +14,7 @@ function UpdateFilm() {
     const [genre, setGenre] = useState('')
 
     useEffect(() =>{
-        axios.get(`http://localhost:5000/film/${params.id}`)
+        axios.get(`http://localhost:5001/film/${params.id}`)
         .then((response) =>{
             // console.log(response.data);
             setLoading(false)
@@ -54,7 +54,7 @@ function UpdateFilm() {
     <h3>{loading ? 'loading..' : film.realisateur }</h3>
     <h4>{loading ? 'loading..' : film.genre }</h4>
 
-    <form action={`http://localhost:5000/film/edit/${params.id}?_method=PUT`} method="post">
+    <form action={`http://localhost:5001/film/edit/${params.id}?_method=PUT`} method="post">
         <input type="hidden" name="_method" value="PUT" />
 
         <label for="">Nom</label>
@@ -69,7 +69,7 @@ function UpdateFilm() {
         <input type="submit" value="envoyer" />
     </form>
 
-    <form action={`http://localhost:5000/film/delete/${params.id}?_method=DELETE`} method="post">
+    <form action={`http://localhost:5001/film/delete/${params.id}?_method=DELETE`} method="post">
         <input type="hidden" name="_method" value="DELETE" />
 
         <input type="submit" value="Supprimer" />
