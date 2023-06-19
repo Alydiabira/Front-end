@@ -43,7 +43,7 @@ function MyBlog() {
             formData.append('titre', titre);
             formData.append('imagename', imagename);
         
-            axios.post('http://localhost:5000/submit-blog/', formData)
+            axios.post('http://localhost:5001/submit-blog/', formData)
             .then(response =>{
                 console.log(response.data);
                 return navigate('/blog')
