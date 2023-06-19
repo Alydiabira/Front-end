@@ -2,7 +2,7 @@ import React from 'react'
 
 function NewFilm() {
   return (
-    <form action="http://localhost:5000/submitFilm" method="post">
+    <form action="http://localhost:5001/submitFilm" method="post">
         <label for="">Nom</label>
         <input type="text" name="nom" />
         <label for="">Date</label>
