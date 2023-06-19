@@ -1,0 +1,17 @@
+body {
+  font-family: sans-serif;
+}
+
+.react-pdf__Document {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: "100%"
+
+  
+}
+
+.react-pdf__Page {
+  width: 300px;
+  height: 450px;
+}
