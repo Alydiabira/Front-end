@@ -15,7 +15,7 @@ function FilesUploadForm() {
             selectedFiles.forEach((file) =>{
                 formData.append('images', file)
             })
-            axios.post('http://localhost:5000/uploadFiles/', formData)
+            axios.post('http://localhost:5001/uploadFiles/', formData)
             .then((response) =>{
                 console.log(response.data);
             })
