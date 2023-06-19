@@ -36,7 +36,7 @@ function FetchAllFilm() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() =>{
-    axios.get('http://localhost:5000/allfilm')
+    axios.get('http://localhost:5001/allfilm')
     .then(response =>{
       console.log(Cookies.get('access_token'));
       dispatch({type: 'FETCH_SUCCESS', payload: response.data});
