@@ -25,13 +25,7 @@ import MyBlog from './components/MyBlog/MyBlog';
 import BlogIndex from './components/BlogIndex/BlogIndex';
 import ChatApp from './components/ChatApp/ChatApp';
 import IndexComponent from './components/IndexComponent';
-
-
-
-
-
 // import styles from './app.module.css'
-
 // import Counter from './components/Counter';
 // import Message from './components/Message';
 // import Hero from './components/Hero';
@@ -58,7 +52,7 @@ import IndexComponent from './components/IndexComponent';
 // import Welcome from './components/Welcome';
 
 
-   
+
 const options = {
   width: 800,
   height: 600,
