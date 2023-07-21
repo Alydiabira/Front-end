@@ -20,7 +20,7 @@ const Greet = ({name, age, children}) =>{
         <h1>Hello {name} vous avez {age} </h1>
         <p>{children}</p>
     </div>
-     )
+    )
 }
 
 export default Greet;
